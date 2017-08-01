@@ -26,7 +26,7 @@ The app allows you to filter the list down as you type. In return, it displays t
 * Foursquare API
 
 
-# How To Use
+# How To Run
 
 1. Open `index.html` with any compatible browser
 2. Click on any of the places on the map / side list for a highlight on the map
@@ -36,6 +36,8 @@ The app allows you to filter the list down as you type. In return, it displays t
 
 # Credits
 > [Google Documentation](https://developers.google.com/maps/documentation/javascript/styling) for styling
+
+
 > [Google map markers API](http://www.googlemapsmarkers.com) by [zedia.net](www.zedia.net)
 
 # Recent Updates
