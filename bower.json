@@ -1,0 +1,21 @@
+{
+  "name": "UDACITY - Neighborhood Project",
+  "authors": [
+    "Dylan Tientcheu <dylanmambou17@gmail.com>"
+  ],
+  "description": "Map of a neigbourhood with marked places",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "^3.4.2"
+  },
+  "private": true
+}

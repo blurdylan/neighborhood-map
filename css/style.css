@@ -1,0 +1,84 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.demo-card-wide {
+    margin: 50px;
+    height: 600px;
+    width: 1280px;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.search-area {
+    font-size: 1.1em;
+    float: right
+}
+
+.location-list {
+    padding: 0;
+    margin: 5px;
+}
+
+.search-input {
+    padding: 5px 10px;
+    font-size: 1.3em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.place {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-color 500ms;
+    -moz-transition: background-color 500ms;
+    transition: background-color 500ms;
+    border-radius: 6px;
+}
+
+.place:hover {
+    color: black;
+    background-color: white;
+}
+
+.sqlogo {
+    width: auto;
+    height: 30%;
+    float: right;
+}
+
+.location-item {
+    padding: 10px;
+    margin: 0;
+    background-color: #fff;
+    list-style-type: none;
+    text-align: center;
+    border: solid green 1px;
+}
+
+.location-item:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+.search-area {
+    border-radius: 5px;
+    position: absolute;
+    max-height: 50%;
+    overflow: auto;
+    left: 0.5%;
+    top: 6%;
+    z-index: 2;
+    background-color: lightseagreen;
+    opacity: 0.9;
+}
+
