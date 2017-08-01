@@ -32,6 +32,8 @@ The app allows you to filter the list down as you type. In return, it displays t
 2. Click on any of the places on the map / side list for a highlight on the map
 3. You can use the search bar at the top.
 
+> Note that this was uploaded with `bower components` for easier install and learning
+
 # Credits
 > [Google Documentation](https://developers.google.com/maps/documentation/javascript/styling) for styling
 > [Google map markers API](http://www.googlemapsmarkers.com) by [zedia.net](www.zedia.net)
