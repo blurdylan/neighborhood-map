@@ -197,7 +197,7 @@ function ViewModel() {
         $.getJSON(foursquareURL).done(function (apiData) {
             var results = apiData.response.venues[0];
             street = results.location.formattedAddress[0];
-            if (results.location.formattedAddress[1] == undefined) {
+            if (results.location.formattedAddress[1] === undefined) {
                 city = "";
             } else {
                 city = results.location.formattedAddress[1];
