@@ -1,16 +1,16 @@
 //*** APIKEY = AIzaSyCacmIGcWsolGnXLp71cBM_My9axyprocM ***//
 
 // A JSON file containing data of choosen locations in the neighbourhood.
-var jsonFile = "js/location/locations.json"
-var choosenLocations
+var jsonFile = "js/location/locations.json";
+var choosenLocations;
 $.getJSON(jsonFile, function (json1) {
-    choosenLocations = json1
+    choosenLocations = json1;
 });
 
 //Map properties
 var content;
 var map;
-var infoWindow
+var infoWindow;
 
 //Forsquare Ids
 var CLIENT_ID = 'Q5MK2XFDK3FVTDQLOQKSFTKS1CI1XEWZSO2TIPP5DU2PWICK';
@@ -152,7 +152,7 @@ function initializeMap() {
             }
         ]
         // EOStyles
-    }
+    };
     // Constructor creates a new map - with defined map styling.
     map = new google.maps.Map(document.getElementById('map'), mapProp);
 }
@@ -198,7 +198,7 @@ function ViewModel() {
             var results = apiData.response.venues[0];
             street = results.location.formattedAddress[0];
             if (results.location.formattedAddress[1] == undefined) {
-                city = ""
+                city = "";
             } else {
                 city = results.location.formattedAddress[1];
             }
@@ -209,7 +209,7 @@ function ViewModel() {
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">'+ location.place +'</h1>'+
-            '<div id="bodyContent">'+ street + " " + city + "<p><small>Provided by FOURSQUARE API Service.</small></p>" +"</div>" + "</div>"
+            '<div id="bodyContent">'+ street + " " + city + "<p><small>Provided by FOURSQUARE API Service.</small></p>" +"</div>" + "</div>";
 
             bindInfoWindow(location.marker, map, infowindow, contentString);
 
@@ -225,9 +225,9 @@ function ViewModel() {
         infoWindow = new google.maps.InfoWindow({});
         info.addListener('click', function () {
             //infoWindow.open(map, this),
-            info.setAnimation(google.maps.Animation.BOUNCE) //Markers will bounce when clicked
+            info.setAnimation(google.maps.Animation.BOUNCE); //Markers will bounce when clicked
             setTimeout(function () {
-                info.setAnimation(null)
+                info.setAnimation(null);
             }, 2200); //Stop markers animation 2s after click
         });
 
@@ -244,7 +244,7 @@ function ViewModel() {
         setTimeout(function () {
             place.marker.setAnimation(null); // End animation on marker after 2 seconds
         }, 2000);
-    }
+    };
 
     var infowindow = new google.maps.InfoWindow();
     /**
