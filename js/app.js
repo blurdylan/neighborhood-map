@@ -276,6 +276,5 @@ function ViewModel() {
 
 //Launch app once document is ready
 $(document).ready(function () {
-    initializeMap();
     ko.applyBindings(ViewModel());
 });
