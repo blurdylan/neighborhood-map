@@ -24,6 +24,9 @@ The app allows you to filter the list down as you type. In return, it displays t
 
 
 # How To Run
+Through this link <https://blurdylan.github.io/neighborhood-map/>
+
+or follow the steps below
 
 1. Open `index.html` with any compatible browser
 2. Click on any of the places on the map / side list for a highlight on the map
