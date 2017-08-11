@@ -1,6 +1,3 @@
-# Frameworks
->Bower, KnockoutJS, JQuery, Bootstrap
-
 # Neighborhood Map Project
 > By Dylan Blur
 

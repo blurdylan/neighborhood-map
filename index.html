@@ -13,11 +13,12 @@
     <!-- Search box -->
 
     <div class="search-area" id="search-area">
-        <input class="search-input" placeholder="Search..." id="search-box" data-bind = "textInput: query, valueUpdate: 'afterkeydown'" autocomplete="off"/>
-        <ul class="location-list" data-bind="{foreach:search}">
-            <li class="place" id="place" data-bind="text: $data.place, click: listViewClick"></li>
+        <input class="search-input" placeholder="Search..." id="search-box" data-bind="textInput: query, valueUpdate: 'afterkeydown'"
+            autocomplete="off" />
+        <ul class="location-list" data-bind="foreach: search">
+            <li class="place" id="place" data-bind="text: place, click: bounce"></li>
         </ul>
-    </div> 
+    </div>
 
     <div>
         <div id="map">Error Loading maps</div>
@@ -27,8 +28,8 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/knockout/dist/knockout.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCacmIGcWsolGnXLp71cBM_My9axyprocM&v=3&callback=initializeMap"></script>
     <script src='js/app.js'></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCacmIGcWsolGnXLp71cBM_My9axyprocM&v=3&callback=startApplication"></script>
 </body>
 
 </html>
