@@ -1,5 +1,4 @@
-// A JSON file containing data of choosen locations in the neighbourhood.
-var jsonFile = "js/location/locations.json";
+// load choosen locations in the neighbourhood.
 var choosenLocations = [
   {
     place: "Pharmacie Bastos",
@@ -33,11 +32,7 @@ var choosenLocations = [
   }
 ];
 
-/* $.getJSON(jsonFile, function(json1) {
-  choosenLocations = json1;
-}); */
-
-//Map properties
+// Initializing map properties
 var content;
 var map;
 var infoWindow;
@@ -46,9 +41,11 @@ var infoWindow;
 var CLIENT_ID = "Q5MK2XFDK3FVTDQLOQKSFTKS1CI1XEWZSO2TIPP5DU2PWICK";
 var CLIENT_SECRET = "MQ3CZLR5KY1F04FUAX5YWXOLYRRJSYFWCHZANZZ23M4WI05L";
 
+// function to start the app
 function startApplication() {
   ko.applyBindings(ViewModel());
 }
+
 //Bind the model to the view
 function myLocation(data) {
   var self = this;
@@ -60,7 +57,7 @@ function myLocation(data) {
 
   this.visible = ko.observable(true);
 
-  //Foursquare API implementation
+  // Foursquare API implementation
   var foursquareURL =
     "https://api.foursquare.com/v2/venues/search?ll=" +
     data.lats +
@@ -74,7 +71,7 @@ function myLocation(data) {
     "&query=" +
     data.place;
 
-  //Parse the results recieved through foursquare
+  // Parse the results recieved from foursquare
   $.getJSON(foursquareURL).done(function(apiData) {
     var results = apiData.response.venues[0];
     street = results.location.formattedAddress[0];
@@ -154,9 +151,7 @@ function myLocation(data) {
 
 function ViewModel() {
   var self = this;
-
   this.query = ko.observable("");
-
   this.locationList = ko.observableArray([]);
 
   // Create map properties and set styles
@@ -330,7 +325,7 @@ function ViewModel() {
         ]
       }
     ]
-    // EOStyles
+    // End Of Styling
   };
   // Constructor creates a new map - with defined map styling.
   map = new google.maps.Map(document.getElementById("map"), mapProp);
@@ -339,6 +334,7 @@ function ViewModel() {
     self.locationList.push(new myLocation(locationItem));
   });
 
+  //Search algorithm
   this.search = ko.computed(function() {
     var filter = self.query().toLowerCase();
     if (!filter) {
@@ -348,7 +344,7 @@ function ViewModel() {
       return self.locationList();
     } else {
       return ko.utils.arrayFilter(self.locationList(), function(locationItem) {
-        var string = locationItem.name.toLowerCase();
+        var string = locationItem.place.toLowerCase();
         var result = string.search(filter) >= 0;
         locationItem.visible(result);
         return result;
