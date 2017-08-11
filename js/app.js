@@ -74,11 +74,11 @@ function myLocation(data) {
   // Parse the results recieved from foursquare
   $.getJSON(foursquareURL).done(function(apiData) {
     var results = apiData.response.venues[0];
-    street = results.location.formattedAddress[0];
+    self.street = results.location.formattedAddress[0];
     if (results.location.formattedAddress[1] === undefined) {
       city = "";
     } else {
-      city = results.location.formattedAddress[1];
+      self.city = results.location.formattedAddress[1];
     }
 
     contentString =
