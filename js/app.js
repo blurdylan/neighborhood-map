@@ -97,7 +97,9 @@ function myLocation(data) {
       "</div>" +
       "</div>";
   });
-  this.infoWindow = new google.maps.InfoWindow({ content: self.contentString });
+  this.infoWindow = new google.maps.InfoWindow({
+    content: self.contentString
+  });
 
   this.marker = new google.maps.Marker({
     position: new google.maps.LatLng(data.lats, data.longs),
@@ -134,6 +136,10 @@ function myLocation(data) {
       "<p><small>Provided by FOURSQUARE API Service.</small></p>" +
       "</div>" +
       "</div>";
+
+    var latlng = new google.maps.LatLng(data.lats, data.longs);
+    map.setZoom(18); //Set the zoom on the map to view the marker
+    map.panTo(latlng); // Pan the map to correct marker when list view item is clicked
 
     self.infoWindow.setContent(self.contentString);
 
