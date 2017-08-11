@@ -72,31 +72,35 @@ function myLocation(data) {
     data.place;
 
   // get the information from foursquare
-  $.getJSON(foursquareURL).done(function(apiData) {
-    // parse json from foursquare
-    var results = apiData.response.venues[0];
-    self.street = results.location.formattedAddress[0];
-    if (results.location.formattedAddress[1] === undefined) {
-      city = "";
-    } else {
-      self.city = results.location.formattedAddress[1];
-    }
+  $.getJSON(foursquareURL)
+    .done(function(apiData) {
+      // parse json from foursquare
+      var results = apiData.response.venues[0];
+      self.street = results.location.formattedAddress[0];
+      if (results.location.formattedAddress[1] === undefined) {
+        city = "";
+      } else {
+        self.city = results.location.formattedAddress[1];
+      }
 
-    contentString =
-      '<div id="content">' +
-      '<div id="siteNotice">' +
-      "</div>" +
-      '<h1 id="firstHeading" class="firstHeading">' +
-      data.place +
-      "</h1>" +
-      '<div id="bodyContent">' +
-      self.street +
-      " " +
-      self.city +
-      "<p><small>Provided by FOURSQUARE API Service.</small></p>" +
-      "</div>" +
-      "</div>";
-  });
+      contentString =
+        '<div id="content">' +
+        '<div id="siteNotice">' +
+        "</div>" +
+        '<h1 id="firstHeading" class="firstHeading">' +
+        data.place +
+        "</h1>" +
+        '<div id="bodyContent">' +
+        self.street +
+        " " +
+        self.city +
+        "<p><small>Provided by FOURSQUARE API Service.</small></p>" +
+        "</div>" +
+        "</div>";
+    })
+    .fail(function() {
+      alert("An error occured in the Foursquare API call.");
+    });
   this.infoWindow = new google.maps.InfoWindow({
     content: self.contentString
   });
@@ -358,4 +362,8 @@ function ViewModel() {
       });
     }
   }, self);
+}
+
+function mapError() {
+  alert("Google maps had a problem during loading reload it.");
 }
